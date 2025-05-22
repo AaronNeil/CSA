@@ -143,7 +143,7 @@ Install all requirements with:
 [Download Python](https://www.python.org/downloads/)
 
 ```sh
-py -m pip install pandas scikit-learn nltk torch transformers datasets joblib tqdm requests
+py -m pip install pandas scikit-learn nltk torch transformers[torch] datasets joblib tqdm requests
 ```
 
 ---
