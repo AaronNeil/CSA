@@ -2,8 +2,8 @@ import pandas as pd
 import os
 import random
 
-INPUT_PATH = "data/pokedex_entries.csv"
-OUTPUT_PATH = "data/labeled_pokemon_entries.csv"
+INPUT_PATH = "CSA/Finals_Project/data/pokedex_entries.csv"
+OUTPUT_PATH = "CSA/Finals_Project/data/labeled_pokemon_entries.csv"
 
 if not os.path.exists(INPUT_PATH):
     print(f"Error: Input file '{INPUT_PATH}' not found. Please make sure the file exists.")

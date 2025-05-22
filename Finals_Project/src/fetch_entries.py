@@ -4,7 +4,7 @@ import os
 import time
 from tqdm import tqdm
 
-DATA_PATH = "data/pokedex_entries.csv"
+DATA_PATH = "CSA/Finals_Project/data/pokedex_entries.csv"
 API_URL = "https://pokeapi.co/api/v2/pokemon-species/"
 
 def clean_entry_text(text):

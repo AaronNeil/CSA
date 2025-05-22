@@ -6,8 +6,8 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import joblib
 
-MODEL_DIR = "models/pokemon_sentiment_transformer"
-DATA_PATH = "data/pokedex_entries.csv"
+MODEL_DIR = "CSA/Finals_Project/models/pokemon_sentiment_transformer"
+DATA_PATH = "CSA/Finals_Project/data/pokedex_entries.csv"
 
 def main():
     # Check if model and data exist

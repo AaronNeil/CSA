@@ -127,7 +127,7 @@ These scripts together allow you to preprocess and label data, train a robust se
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.7+ 
 - `pandas`
 - `scikit-learn`
 - `nltk`
@@ -139,20 +139,27 @@ These scripts together allow you to preprocess and label data, train a robust se
 - `requests`
 
 Install all requirements with:
+
+[Download Python](https://www.python.org/downloads/)
+
 ```sh
-pip install pandas scikit-learn nltk torch transformers datasets joblib tqdm requests
+py -m pip install pandas scikit-learn nltk torch transformers datasets joblib tqdm requests
 ```
 
 ---
 
 ## Usage
 
+```sh
+cd CSA/Finals_Project
+```
+
 1. **Fetch entries:**
    ```sh
    python src/fetch_entries.py
    ```
 
-2. **Label entries:**
+2. **Label entries(optional):**
    ```sh
    python src/semi_label.py
    ```

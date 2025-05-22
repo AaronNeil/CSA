@@ -9,8 +9,8 @@ import nltk
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.tokenize import word_tokenize, sent_tokenize
 
-DATA_PATH = "data/labeled_pokemon_entries.csv"
-MODEL_OUT = "models/pokemon_sentiment_transformer"
+DATA_PATH = "CSA/Finals_Project/data/labeled_pokemon_entries.csv"
+MODEL_OUT = "CSA/Finals_Project/models/pokemon_sentiment_transformer"
 
 def download_nltk_resources():
     nltk.download('punkt_tab')
