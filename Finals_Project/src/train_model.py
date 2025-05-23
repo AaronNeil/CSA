@@ -8,9 +8,14 @@ import joblib
 import nltk
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.tokenize import word_tokenize, sent_tokenize
+import torch
 
 DATA_PATH = "CSA/Finals_Project/data/labeled_pokemon_entries.csv"
 MODEL_OUT = "CSA/Finals_Project/models/pokemon_sentiment_transformer"
+
+print("CUDA available:", torch.cuda.is_available())
+print("CUDA device count:", torch.cuda.device_count())
+print("CUDA device name:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "No CUDA device")
 
 def download_nltk_resources():
     nltk.download('punkt_tab')
