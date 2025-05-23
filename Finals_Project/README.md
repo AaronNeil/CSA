@@ -146,10 +146,6 @@ Install all requirements with:
 py -m pip install pandas scikit-learn nltk torch transformers[torch] datasets joblib tqdm requests
 ```
 
-### enable CUDA GPU-accelerated Pytorch (only on NVIDIA GPU)
-```sh
-pip3 install torch --index-url https://download.pytorch.org/whl/cu128
-```
 ---
 
 ## Usage
