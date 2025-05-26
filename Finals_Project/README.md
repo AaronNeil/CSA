@@ -43,7 +43,6 @@ models/
 ## Key Features
 
 - **Modern NLP:** Uses Hugging Face Transformers for state-of-the-art text classification.
-- **Preprocessing:** Applies sentence segmentation, lemmatization, and stemming (NLTK) to normalize text.
 - **Interactive Labeling:** Semi-automated labeling tool for efficient dataset creation.
 - **Metrics:** Reports accuracy, precision, recall, and F1-score.
 - **Reusable Artifacts:** Saves model, tokenizer, and label encoder for future inference.
@@ -120,6 +119,10 @@ This script is used for predicting the sentiment of new Pokédex entries using t
    - Allows repeated predictions until the user chooses to quit.
 
 ---
+
+## Architecture Flow
+
+![Architecture Flow](architecture_flow.png)
 
 These scripts together allow you to preprocess and label data, train a robust sentiment classifier, and interactively analyze new Pokémon entries for sentiment.
 
