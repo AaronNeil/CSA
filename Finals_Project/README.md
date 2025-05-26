@@ -40,6 +40,12 @@ models/
 
 ---
 
+## Architecture Flow
+
+![Architecture flow](data/architecture_flow.png)
+
+---
+
 ## Key Features
 
 - **Modern NLP:** Uses Hugging Face Transformers for state-of-the-art text classification.
@@ -67,12 +73,11 @@ This script is responsible for training the sentiment analysis model. Here’s h
    - Sets constants for the data path and model output directory.
 
 2. **NLTK Resource Download**
-   - Downloads necessary NLTK resources for tokenization and lemmatization.
+   - Downloads necessary NLTK resources for tokenization.
 
 3. **Text Preprocessing**
    - Splits each Pokédex entry into sentences.
    - Tokenizes each sentence into words.
-   - Applies lemmatization and stemming to each token using NLTK.
    - Recombines tokens and sentences into a normalized string.
 
 4. **Data Loading and Preparation**
@@ -119,10 +124,6 @@ This script is used for predicting the sentiment of new Pokédex entries using t
    - Allows repeated predictions until the user chooses to quit.
 
 ---
-
-## Architecture Flow
-
-![Architecture Flow](architecture_flow.png)
 
 These scripts together allow you to preprocess and label data, train a robust sentiment classifier, and interactively analyze new Pokémon entries for sentiment.
 
