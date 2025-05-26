@@ -6,27 +6,24 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report
 import joblib
 import nltk
-from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.tokenize import word_tokenize, sent_tokenize
 import torch
+print("CUDA available:", torch.cuda.is_available())
+print("Device count:", torch.cuda.device_count())
+print("Current device:", torch.cuda.current_device() if torch.cuda.is_available() else "CPU")
+
 
 DATA_PATH = "CSA/Finals_Project/data/labeled_pokemon_entries.csv"
 MODEL_OUT = "CSA/Finals_Project/models/pokemon_sentiment_transformer"
 
-print("CUDA available:", torch.cuda.is_available())
-print("CUDA device count:", torch.cuda.device_count())
-print("CUDA device name:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "No CUDA device")
-
 def download_nltk_resources():
-    nltk.download('punkt_tab')
-    nltk.download('wordnet')
+    nltk.download('punkt')
 
-def preprocess_text(text, lemmatizer, stemmer):
+def preprocess_text(text):
     sentences = sent_tokenize(text, language='english')
     processed_sentences = []
     for sent in sentences:
         tokens = word_tokenize(sent)
-        tokens = [stemmer.stem(lemmatizer.lemmatize(token)) for token in tokens]
         processed_sentences.append(' '.join(tokens))
     return ' '.join(processed_sentences)
 
@@ -40,9 +37,7 @@ def load_and_prepare_data():
         exit(1)
     le = LabelEncoder()
     df["label"] = le.fit_transform(df["sentiment"])
-    lemmatizer = WordNetLemmatizer()
-    stemmer = PorterStemmer()
-    df["entry"] = df["entry"].astype(str).apply(lambda x: preprocess_text(x, lemmatizer, stemmer))
+    df["entry"] = df["entry"].astype(str).apply(preprocess_text)
     return df, le
 
 def tokenize_datasets(train_df, test_df, tokenizer):
@@ -121,4 +116,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
